@@ -15,7 +15,3 @@ func MakeAudio(text string, output string, voice string, playspeed float64) {
 		fmt.Println(err)
 	}
 }
-
-func Test() {
-	fmt.Println("done")
-}
