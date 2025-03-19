@@ -1,2 +1,4 @@
 # Ignore SQLite DB
-db.sqlite
+/db.sqlite
+/temp
+/voice
