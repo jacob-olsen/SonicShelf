@@ -81,3 +81,18 @@ func AddVoice(name string) int {
 	id, _ := result.LastInsertId()
 	return int(id)
 }
+func ListVoice() []Voice {
+	result, err := db.Query("SELECT Id, Name, addDate FROM voice;")
+	if err != nil {
+		print("sql ListVoice:", err.Error())
+	}
+	var VoiceList []Voice
+	for result.Next() {
+		var newVoice Voice
+		var uTime int64
+		result.Scan(&newVoice.ID, &newVoice.Name, &uTime)
+		newVoice.Addet = time.Unix(uTime, 0)
+		VoiceList = append(VoiceList, newVoice)
+	}
+	return VoiceList
+}
