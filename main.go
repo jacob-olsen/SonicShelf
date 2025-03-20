@@ -12,7 +12,6 @@ func main() {
 	SetupFolders()
 	fmt.Println("setup databaser")
 	meta.Setup()
-
 }
 
 func AddVoice(voicePath string, name string) {
